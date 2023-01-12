@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+ {% block title %} Page | Home{% endblock %}
+
+{% block content %}
+<center>
+  <h2>Welcome to VirtualWorld</h2>
+
+ {% if user.is_authenticated %}
+ Hii {{user.username}}!
+ <p><a href="{% url 'logout' %}"> Log Out</a></p>
+ {% else %}
+ <p>You are not Logged in</p>
+ <a href="accounts/login">Login</a>
+ {% endif %}
+
+ {% endblock %}
+</center>
+</body>
+</html>

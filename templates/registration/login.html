@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titel %}
+       Login Page 
+{% endblock %}
+{% block content %}
+    <center>
+    <h2>Login Page </h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log In</button>
+    </form>
+
+    <p>You don't have account!</p>
+ <a href="http://127.0.0.1:8000/accounts/signup">Signup</a>
+    </center>
+    {% endblock %}
+</body>
+</html>
